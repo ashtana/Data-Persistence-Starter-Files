@@ -2,22 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using TMPro;
 #if UNITY_EDITOR
 using UnityEditor;
 #endif
 
 public class MenuUIHandler : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] TMP_Text PlayerNameInput;
+    public void SetPlayerName()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        MenuManager.Instance.PlayerName = PlayerNameInput.text;
     }
 
     public void StartNew()
